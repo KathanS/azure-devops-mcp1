@@ -51,8 +51,8 @@ Interact with these Azure DevOps services:
 
 ### 📅 Work Items
 
-- **wit_my_work_items**: Retrieve a list of work items relevent to the authenticated user.
-- **wit_list_backlogs**: Revieve a list of backlogs for a given project and team.
+- **wit_my_work_items**: Retrieve a list of work items relevant to the authenticated user.
+- **wit_list_backlogs**: Retrieve a list of backlogs for a given project and team.
 - **wit_list_backlog_work_items**: Retrieve a list of backlogs of for a given project, team, and backlog category.
 - **wit_get_work_item**: Get a single work item by ID.
 - **wit_get_work_items_batch_by_ids**: Retrieve list of work items by IDs in batch.
