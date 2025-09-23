@@ -2,7 +2,6 @@
 // Licensed under the MIT License.
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { AccessToken } from "@azure/identity";
 import { WebApi } from "azure-devops-node-api";
 import { configureRepoTools, REPO_TOOLS } from "../../../src/tools/repositories";
 import { PullRequestStatus, GitVersionType, GitPullRequestQueryType, CommentThreadStatus } from "azure-devops-node-api/interfaces/GitInterfaces.js";
@@ -74,7 +73,7 @@ describe("repos tools", () => {
 
     mockGetCurrentUserDetails.mockResolvedValue({
       authenticatedUser: { id: "user123", uniqueName: "testuser@example.com", displayName: "Test User" },
-    } as any);
+    } as Record<string, unknown>);
   });
 
   describe("repo_update_pull_request", () => {
@@ -480,7 +479,7 @@ describe("repos tools", () => {
 
       const parsedResult = JSON.parse(result.content[0].text);
       expect(parsedResult).toHaveLength(2);
-      expect(parsedResult.map((r: any) => r.name).sort()).toEqual(["frontend-app", "frontend-web"]);
+      expect(parsedResult.map((r: { name: string }) => r.name).sort()).toEqual(["frontend-app", "frontend-web"]);
     });
   });
 

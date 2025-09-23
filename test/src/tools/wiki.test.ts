@@ -1,4 +1,3 @@
-import { AccessToken } from "@azure/identity";
 import { describe, expect, it } from "@jest/globals";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { WebApi } from "azure-devops-node-api";
@@ -703,7 +702,6 @@ describe("configureWikiTools", () => {
 
   describe("create_or_update_page tool", () => {
     let mockFetch: jest.Mock;
-    let mockAccessToken: AccessToken;
     let mockConnection: { getWikiApi: jest.Mock; serverUrl: string };
 
     beforeEach(() => {

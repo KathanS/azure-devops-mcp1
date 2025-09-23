@@ -15,6 +15,7 @@ import {
   GitPullRequestQueryType,
   CommentThreadContext,
   CommentThreadStatus,
+  Comment,
 } from "azure-devops-node-api/interfaces/GitInterfaces.js";
 import { z } from "zod";
 import { getCurrentUserDetails, getUserIdFromEmail } from "./auth.js";
@@ -56,7 +57,7 @@ function branchesFilterOutIrrelevantProperties(branches: GitRef[], top: number) 
  * @param comments Array of comments to trim (can be undefined/null)
  * @returns Array of trimmed comment objects with essential properties only
  */
-function trimComments(comments: any[] | undefined | null) {
+function trimComments(comments: Comment[] | undefined | null) {
   return comments
     ?.filter((comment) => !comment.isDeleted) // Exclude deleted comments
     ?.map((comment) => ({

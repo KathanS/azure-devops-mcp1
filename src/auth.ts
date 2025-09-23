@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
 import { AzureCliCredential, ChainedTokenCredential, DefaultAzureCredential, TokenCredential } from "@azure/identity";
 import { AccountInfo, AuthenticationResult, PublicClientApplication } from "@azure/msal-node";
 import open from "open";
@@ -29,7 +32,7 @@ class OAuthAuthenticator {
           scopes,
           account: this.accountId,
         });
-      } catch (error) {
+      } catch {
         authResult = null;
       }
     }
